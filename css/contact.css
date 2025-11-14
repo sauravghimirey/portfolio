@@ -47,6 +47,36 @@
   flex: 1;
 }
 
+.contact-alert {
+    width: 100%;
+    background: #4caf50;
+    color: white;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 500;
+    opacity: 0;
+    transform: translateY(-15px);
+    transition: all 0.3s ease-in-out;
+}
+
+.contact-alert i {
+    font-size: 18px;
+}
+
+.contact-alert.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.hidden {
+    display: none;
+}
+
+
 /* Enable resizing for textarea */
 .form-group textarea {
   min-height: 120px;
