@@ -1,0 +1,67 @@
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  background: var(--card-bg);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+.form-group { margin-bottom: 1.5rem }
+
+.form-group label {
+  display: block;
+  margin-bottom: .5rem;
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: .8rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-family: 'Poppins', sans-serif;
+  transition: var(--transition);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--primary);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(108,99,255,.2);
+}
+
+.form-group textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+/* Row layout for Name & Email */
+/* Flex row for Name + Email */
+.form-row {
+  display: flex;
+  gap: 1rem;
+}
+
+.form-group.half {
+  flex: 1;
+}
+
+/* Enable resizing for textarea */
+.form-group textarea {
+  min-height: 120px;
+  resize: vertical;   /* only up & down */
+  max-width: 100%;    /* prevents overflow */
+  box-sizing: border-box;
+}
+/* Button with icon */
+.btn.primary i {
+  margin-right: 0.5rem;
+}
+@media (max-width: 576px) {
+  /* On smaller screens, stack the name and email inputs vertically */
+  .form-row {
+    flex-direction: column;
+    gap: 0; /* Remove gap to prevent extra space */
+  }
+}

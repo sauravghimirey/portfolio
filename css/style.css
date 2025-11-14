@@ -1,0 +1,109 @@
+/* Global styles that don't fit into specific section files */
+.page-content {
+  padding: 6rem 5% 3rem;
+  min-height: 100vh;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  text-align: center;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(to right, var(--primary), var(--secondary));
+  border-radius: 2px;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInLeft {
+  from { transform: translateX(-50px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideInRight {
+  from { transform: translateX(50px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0.5); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.fade-in {
+  animation: fadeIn 1s ease forwards;
+}
+
+.slide-in-left {
+  animation: slideInLeft 0.8s ease forwards;
+}
+
+.slide-in-right {
+  animation: slideInRight 0.8s ease forwards;
+}
+
+.scale-in {
+  animation: scaleIn 0.6s ease forwards;
+}
+
+.animated-bg-element {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(108, 99, 255, 0.1);
+  filter: blur(30px);
+  z-index: -1;
+}
+
+.bg-element-1 {
+  width: 300px;
+  height: 300px;
+  top: 10%;
+  left: 5%;
+  animation: float 8s ease-in-out infinite;
+}
+
+.bg-element-2 {
+  width: 200px;
+  height: 200px;
+  bottom: 15%;
+  right: 10%;
+  animation: float 6s ease-in-out infinite reverse;
+}
+
+.bg-element-3 {
+  width: 150px;
+  height: 150px;
+  top: 50%;
+  left: 20%;
+  animation: float 7s ease-in-out infinite 2s;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0px); }
+}

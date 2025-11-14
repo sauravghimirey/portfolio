@@ -1,0 +1,163 @@
+.my-edge {
+  padding: 6rem 8% 4rem;
+  background: var(--bg);
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 35px;
+  margin-bottom: 50px;
+}
+
+.feature {
+  background: var(--card-bg);
+  padding: 20px 18px;
+  border-radius: 14px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: var(--shadow);
+}
+
+.feature:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+}
+
+.feature i {
+  font-size: 28px;
+  color: white;
+  background: var(--primary);
+  padding: 15px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-bottom: 20px;
+  transition: background 0.3s ease;
+}
+
+.feature:hover i {
+  background: var(--secondary);
+}
+
+.feature h3 {
+  font-size: 20px;
+  margin: 8px 0 10px 0; 
+  color: var(--text);
+  font-weight: 600;
+}
+
+.feature p {
+  font-size: 14.5px;
+  line-height: 1.55;
+  margin: 0;
+  padding: 0;
+  color: var(--text);
+  text-align: justify;
+  text-justify: inter-word;
+  white-space: normal;
+}
+
+.testimonial {
+  background: var(--card-bg);
+  padding: 30px;
+  border-radius: 10px;
+  margin: 40px auto;
+  text-align: center;
+  max-width: 800px;
+  box-shadow: var(--shadow);
+}
+
+.testimonial p {
+  font-style: italic;
+  margin-bottom: 20px;
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.testimonial .author {
+  font-weight: bold;
+  color: var(--primary);
+}
+
+.cta {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.cta a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px; /* space between icon and text */
+  padding: 15px 30px;
+  background: var(--primary);
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.cta a:hover {
+  background: var(--secondary);
+}
+
+.cta a .hand {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.cta a:hover .hand {
+  animation: shake 0.5s;
+  animation-iteration-count: 1;
+}
+
+@keyframes shake {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(15deg); }
+  50% { transform: rotate(-15deg); }
+  75% { transform: rotate(10deg); }
+  100% { transform: rotate(0deg); }
+}
+@media (max-width: 768px) {
+  /* Reduce padding for a better fit on tablets and larger phones */
+ .my-edge {
+    padding: 4rem 5% 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  /* Testimonial Section */
+  .testimonial {
+    padding: 20px;
+    margin: 20px auto;
+  }
+
+  .testimonial p {
+    font-size: 16px;
+  }
+  
+  /* Feature Cards */
+  .feature {
+    padding: 15px 12px;
+  }
+  
+  .feature i {
+    font-size: 24px;
+    padding: 12px;
+  }
+  
+  .feature h3 {
+    font-size: 18px;
+  }
+  
+  .feature p {
+    font-size: 14px;
+  }
+
+  /* Call-to-Action (CTA) Button */
+  .cta a {
+    padding: 12px 24px;
+    font-size: 14px;
+  }
+}

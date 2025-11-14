@@ -1,0 +1,136 @@
+@media (max-width: 992px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding-top: 6rem;
+  }
+  
+  .hero-content, .slideshow-container {
+    max-width: 100%;
+  }
+  
+  .hero-content {
+    margin-bottom: 3rem;
+    padding-right: 0;
+  }
+  
+  .slideshow-container {
+    width: 80%;
+    margin-top: 2rem;
+  }
+  
+  .profile-pic {
+    width: 300px;
+    height: 300px;
+  }
+  
+  .cta-buttons {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  /* NAVIGATION */
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    width: 200px;
+    background: var(--card-bg);
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    gap: 1rem;
+    display: none; /* hidden by default */
+    z-index: 999;
+  }
+
+  .nav-links.active {
+    display: flex; /* show dropdown */
+  }
+
+  .nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .theme-toggle-button {
+    border: none;
+    background: transparent;
+    font-size: 1.3rem;
+    cursor: pointer;
+    color: var(--text);
+  }
+
+  .hamburger {
+    display: block;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+
+  /* HERO */
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  /* FOOTER */
+  .footer-minimal {
+    flex-direction: column;
+    gap: 0.8rem;
+    text-align: center;
+  }
+
+  .footer-contact {
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .footer-social {
+    order: -1;
+    margin-bottom: 0.5rem;
+  }
+}
+
+
+@media (max-width: 576px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+  
+  .typewriter {
+    font-size: 1.2rem;
+  }
+  
+  .btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+  
+  .profile-pic {
+    width: 250px;
+    height: 250px;
+  }
+
+  .footer-contact {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .footer-contact span {
+    font-size: 0.7rem;
+  }
+  
+  .footer-social a {
+    font-size: 0.8rem;
+  }
+}
