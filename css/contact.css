@@ -1,27 +1,74 @@
+/* ── Layout ── */
+.contact-wrapper {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+/* ── Info Cards ── */
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  flex: 0 0 320px;
+}
+
+.info-card {
+  background: var(--card-bg);
+  padding: 1.6rem 1.8rem;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  border-left: 4px solid var(--primary);
+}
+
+.info-card h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  font-style: italic;
+  color: var(--primary);
+  margin: 0 0 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.info-card p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--text);
+  opacity: 0.85;
+  margin: 0;
+}
+
+/* ── Contact Form ── */
 .contact-form {
-  max-width: 600px;
-  margin: 0 auto;
+  flex: 1;
   background: var(--card-bg);
   padding: 2rem;
-  border-radius: 8px;
+  border-radius: 12px;
   box-shadow: var(--shadow);
 }
 
-.form-group { margin-bottom: 1.5rem }
+.form-group {
+  margin-bottom: 1.5rem;
+}
 
 .form-group label {
   display: block;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
   font-weight: 500;
 }
 
 .form-group input,
 .form-group textarea {
   width: 100%;
-  padding: .8rem;
+  padding: 0.8rem;
   border: 1px solid #ddd;
   border-radius: 4px;
   font-family: 'Poppins', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  box-sizing: border-box;
   transition: var(--transition);
 }
 
@@ -29,15 +76,15 @@
 .form-group textarea:focus {
   border-color: var(--primary);
   outline: none;
-  box-shadow: 0 0 0 2px rgba(108,99,255,.2);
+  box-shadow: 0 0 0 2px rgba(108,99,255,0.2);
 }
 
 .form-group textarea {
   min-height: 150px;
   resize: vertical;
+  max-width: 100%;
 }
-/* Row layout for Name & Email */
-/* Flex row for Name + Email */
+
 .form-row {
   display: flex;
   gap: 1rem;
@@ -47,51 +94,80 @@
   flex: 1;
 }
 
+/* ── Success Alert ── */
 .contact-alert {
-    width: 100%;
-    background: #4caf50;
-    color: white;
-    padding: 12px;
-    border-radius: 8px;
-    margin-bottom: 15px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-weight: 500;
-    opacity: 0;
-    transform: translateY(-15px);
-    transition: all 0.3s ease-in-out;
+  width: 100%;
+  background: #4caf50;
+  color: white;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 500;
+  opacity: 0;
+  transform: translateY(-15px);
+  transition: all 0.3s ease-in-out;
 }
 
-.contact-alert i {
-    font-size: 18px;
-}
+.contact-alert i { font-size: 18px; }
 
 .contact-alert.show {
-    opacity: 1;
-    transform: translateY(0);
+  opacity: 1;
+  transform: translateY(0);
 }
 
-.hidden {
-    display: none;
-}
+.hidden { display: none; }
 
+.btn.primary i { margin-right: 0.5rem; }
 
-/* Enable resizing for textarea */
-.form-group textarea {
-  min-height: 120px;
-  resize: vertical;   /* only up & down */
-  max-width: 100%;    /* prevents overflow */
-  box-sizing: border-box;
-}
-/* Button with icon */
-.btn.primary i {
-  margin-right: 0.5rem;
-}
-@media (max-width: 576px) {
-  /* On smaller screens, stack the name and email inputs vertically */
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .contact-wrapper { flex-direction: column; }
+
+  .contact-info {
+    flex: none;
+    width: 100%;
+  }
+
+  .info-card { padding: 1.2rem 1.4rem; }
+  .info-card h3 { font-size: 1rem; }
+  .info-card p { font-size: 0.95rem; }
+
   .form-row {
     flex-direction: column;
-    gap: 0; /* Remove gap to prevent extra space */
+    gap: 0;
+  }
+
+  .contact-form {
+    padding: 1.4rem 1.2rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    font-size: 1rem;
+    padding: 0.9rem;
+  }
+
+  .form-group label { font-size: 1rem; }
+  .form-group textarea { min-height: 180px; }
+
+  .btn.primary {
+    width: 100%;
+    justify-content: center;
+    padding: 1rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .contact-form { padding: 1.2rem 1rem; }
+  .info-card h3 { font-size: 1.05rem; }
+  .info-card p {
+    font-size: 0.95rem;
+    line-height: 1.7;
   }
 }
