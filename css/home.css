@@ -130,7 +130,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 7rem 5% 4rem;
-  min-height: 100vh;
+  min-height: 100dvh;
   position: relative;
   overflow: hidden;
 }
